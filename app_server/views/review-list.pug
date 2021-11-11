@@ -1,0 +1,26 @@
+extends layout 
+
+block content
+  .row.banner
+    .col-12
+      h1= pageHeader.title
+        small &nbsp;#{pageHeader.strapline}
+  .row
+    .col-12.col-md-8
+
+      each review in reviews
+        .card
+          .card-block
+            .h4=review.name
+            small &nbsp;
+              i.fa.fa-star
+              i.fa.fa-star
+              i.fa.fa-star
+              i.fa.fa-star
+              i.fa.fa-star
+            p.reviewBoard= review.review
+            .facilities
+              each facility in review.facilities
+                span.badge.badge-warning= facility
+    .col-12.col-md-4
+      p.lead Looking for a new board? This is perfect place to view surfboard's which fit your needs. Our community of surfers are here to review their boards and hopefully you will find your next stick!
